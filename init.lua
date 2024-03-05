@@ -184,6 +184,15 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- MY KEYMAPS
+-- Tabs
+vim.keymap.set('n', '<leader>tt', '<cmd>tabnew<cr>', { desc = 'New tab' })
+vim.keymap.set('n', '<leader>tx', '<cmd>:tabc<cr>', { desc = 'Close current tab' })
+vim.keymap.set('n', '<leader>tn', '<cmd>:tabn<cr>', { desc = 'Next tab' })
+vim.keymap.set('n', '<leader>tp', '<cmd>:tabp<cr>', { desc = 'Previous tab' })
+vim.keymap.set('n', '<leader>tl', '<cmd>:-tabmove<cr>', { desc = 'Move tab left' })
+vim.keymap.set('n', '<leader>tr', '<cmd>:+tabmove<cr>', { desc = 'Move tab left' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
