@@ -802,7 +802,7 @@ require('lazy').setup {
       sections = {
         lualine_a = { 'mode' },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
-        lualine_c = { 'filename' },
+        lualine_c = { { 'filename', path = 1 } },
         lualine_x = { { 'filetype', icon_only = true } },
         lualine_y = { 'progress' },
         lualine_z = {},
