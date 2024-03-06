@@ -232,6 +232,10 @@ require('lazy').setup {
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'tpope/vim-fugitive',
   { 'nvim-focus/focus.nvim', version = '*', opts = {} },
+  { 'declancm/cinnamon.nvim', opts = {
+    extra_keymaps = true,
+    max_length = 500,
+  } },
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
