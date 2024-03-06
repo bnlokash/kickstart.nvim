@@ -403,6 +403,9 @@ require('lazy').setup {
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
         -- },
+        defaults = {
+          layout_strategy = 'vertical',
+        },
         -- pickers = {}
         extensions = {
           ['ui-select'] = {
