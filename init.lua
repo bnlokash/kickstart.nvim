@@ -189,7 +189,9 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<leader>tt', '<cmd>tabnew<cr>', { desc = 'New tab' })
 vim.keymap.set('n', '<leader>tx', '<cmd>:tabc<cr>', { desc = 'Close current tab' })
 vim.keymap.set('n', '<leader>tn', '<cmd>:tabn<cr>', { desc = 'Next tab' })
+vim.keymap.set('n', '<C-m>', '<cmd>:tabn<cr>', { desc = 'Next tab' })
 vim.keymap.set('n', '<leader>tp', '<cmd>:tabp<cr>', { desc = 'Previous tab' })
+vim.keymap.set('n', '<C-n>', '<cmd>:tabp<cr>', { desc = 'Previous tab' })
 vim.keymap.set('n', '<leader>tl', '<cmd>:-tabmove<cr>', { desc = 'Move tab left' })
 vim.keymap.set('n', '<leader>tr', '<cmd>:+tabmove<cr>', { desc = 'Move tab left' })
 
