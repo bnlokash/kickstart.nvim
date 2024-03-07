@@ -239,6 +239,15 @@ require('lazy').setup {
     max_length = 500,
   } },
 
+  -- diagnostics in top-right
+  {
+    'dgagn/diagflow.nvim',
+    event = 'LspAttach',
+    opts = {
+      scope = 'line',
+    },
+  },
+
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
   -- keys can be used to configure plugin behavior/loading/etc.
