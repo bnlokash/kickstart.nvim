@@ -338,6 +338,15 @@ require('lazy').setup {
   -- after the plugin has been loaded:
   --  config = function() ... end
 
+  {
+    'ggandor/leap.nvim',
+    config = function()
+      vim.keymap.set('n', 's', function()
+        require('leap').leap { target_windows = { vim.fn.win_getid() } }
+      end)
+    end,
+  },
+
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
