@@ -196,8 +196,8 @@ vim.keymap.set('n', '<leader>tr', '<cmd>:+tabmove<cr>', { desc = 'Move tab left'
 -- [] keymaps
 vim.keymap.set({ 'n', 'x' }, '[[', "<Cmd>lua Scroll('<C-u>', 1, 1)<CR>", { desc = 'Scroll up' })
 vim.keymap.set({ 'n', 'x' }, ']]', "<Cmd>lua Scroll('<C-d>', 1, 1)<CR>", { desc = 'Scroll down ' })
-vim.keymap.set('n', ']t', '<cmd>:tabn<cr>', { desc = 'Next tab' })
-vim.keymap.set('n', '[t', '<cmd>:tabp<cr>', { desc = 'Previous tab' })
+vim.keymap.set('n', ']a', '<cmd>:tabn<cr>', { desc = 'Next tab' })
+vim.keymap.set('n', '[a', '<cmd>:tabp<cr>', { desc = 'Previous tab' })
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
 vim.keymap.set('n', ']w', '<C-w>w', { desc = 'Next window' })
