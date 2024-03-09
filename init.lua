@@ -759,6 +759,10 @@ require('lazy').setup {
               fallback()
             end
           end, { 'i', 's', 'c' }),
+          -- Select the [n]ext item
+          ['<Down>'] = cmp.mapping.select_next_item(),
+          -- Select the [p]revious item
+          ['<Up>'] = cmp.mapping.select_prev_item(),
         },
         sources = {
           { name = 'nvim_lsp' },
