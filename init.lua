@@ -241,6 +241,7 @@ require('lazy').setup {
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'tpope/vim-fugitive',
+  { 'windwp/nvim-ts-autotag', opts = {} },
   { 'nvim-focus/focus.nvim', version = '*', opts = {} },
   { 'declancm/cinnamon.nvim', opts = {
     extra_keymaps = true,
@@ -859,6 +860,9 @@ require('lazy').setup {
         auto_install = true,
         highlight = { enable = true },
         indent = { enable = true },
+        autotag = {
+          enable = true,
+        },
       }
 
       -- There are additional nvim-treesitter modules that you can use to interact
