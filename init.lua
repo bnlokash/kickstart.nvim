@@ -494,6 +494,10 @@ require('lazy').setup {
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
       { 'j-hui/fidget.nvim', opts = {} },
     },
+    on_attach = function(bufnr)
+      local bufopts = { noremap = true, silent = true, buffer = bufnr }
+      vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, bufopts)
+    end,
     config = function()
       -- Brief Aside: **What is LSP?**
       --
