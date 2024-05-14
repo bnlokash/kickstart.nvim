@@ -146,7 +146,7 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 5
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -184,7 +184,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 -- MY KEYMAPS
 -- Tabs
-vim.keymap.set('n', '<leader>tt', '<cmd>tabnew<cr>', { desc = 'New tab' })
+vim.keymap.set('n', '<leader>tt', '<cmd>tab split<cr>', { desc = 'New tab' })
 vim.keymap.set('n', '<leader>tx', '<cmd>:tabc<cr>', { desc = 'Close current tab' })
 vim.keymap.set('n', '<leader>tn', '<cmd>:tabn<cr>', { desc = 'Next tab' })
 vim.keymap.set('n', '<C-m>', '<cmd>:tabn<cr>', { desc = 'Next tab' })
@@ -202,6 +202,13 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
 vim.keymap.set('n', ']w', '<C-w>w', { desc = 'Next window' })
 vim.keymap.set('n', '[w', '<C-w>W', { desc = 'Previous window' })
+
+-- copilot keymaps
+vim.keymap.set('i', '<Right>', 'copilot#Accept("\\<CR>")', {
+  expr = true,
+  replace_keycodes = false,
+})
+vim.g.copilot_no_tab_map = true
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -241,21 +248,14 @@ require('lazy').setup {
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'tpope/vim-fugitive',
+  'github/copilot.vim',
+  { 'olimorris/persisted.nvim', opts = { lazy = false, autoload = true } },
   { 'windwp/nvim-ts-autotag', opts = {} },
   { 'nvim-focus/focus.nvim', version = '*', opts = {} },
-  { 'declancm/cinnamon.nvim', opts = {
-    extra_keymaps = true,
-    max_length = 500,
-  } },
-
-  -- diagnostics in top-right
-  {
-    'dgagn/diagflow.nvim',
-    event = 'LspAttach',
-    opts = {
-      scope = 'line',
-    },
-  },
+  -- { 'declancm/cinnamon.nvim', opts = {
+  --   extra_keymaps = true,
+  --   max_length = 500,
+  -- } },
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
