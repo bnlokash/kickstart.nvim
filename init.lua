@@ -203,6 +203,15 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagn
 vim.keymap.set('n', ']w', '<C-w>w', { desc = 'Next window' })
 vim.keymap.set('n', '[w', '<C-w>W', { desc = 'Previous window' })
 
+-- file explorer keymaps
+vim.keymap.set('n', '<leader>ff', '<cmd>:Neotree source=filesystem reveal=true position=left toggle<cr>', { desc = 'Toggle file [F]inder' })
+vim.keymap.set('n', '<leader>fs', '<cmd>:Neotree source=filesystem action=focus<cr>', { desc = 'Toggle file [F]inder' })
+
+-- window keymaps
+vim.keymap.set('n', '<leader>wh', '<cmd>:vertical resize -5<cr>', { desc = 'Decrease window width' })
+vim.keymap.set('n', '<leader>wl', '<cmd>:vertical resize +5<cr>', { desc = 'Increase window width' })
+vim.keymap.set('n', '<leader>wq', '<cmd>:q<cr>', { desc = 'Decrease window height' })
+
 -- copilot keymaps
 vim.keymap.set('i', '<Right>', 'copilot#Accept("\\<CR>")', {
   expr = true,
@@ -565,7 +574,7 @@ require('lazy').setup {
 
           -- Fuzzy find all the symbols in your current workspace
           --  Similar to document symbols, except searches over your whole project.
-          map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+          -- map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
           -- Rename the variable under your cursor
           --  Most Language Servers support renaming across files, etc.
@@ -806,6 +815,18 @@ require('lazy').setup {
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+
+  -- file explorer
+  {
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v3.x',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+      'MunifTanjim/nui.nvim',
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    },
+  },
 
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
